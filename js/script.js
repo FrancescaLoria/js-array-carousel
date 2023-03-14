@@ -1,2 +1,25 @@
+// **MILESTONE 2**
+// Adesso rimuoviamo tutto il markup statico e inseriamo tutte le immagini dinamicamente servendoci dell'array fornito e un semplice ciclo for che concatena un template literal.
+// Tutte le immagini saranno nascoste, tranne la prima, che avrà una classe specifica che la renderà visibile.
+// Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella milestone 1, ma costruito dinamicamente attraverso JavaScript.
 
+// 1 creo in maniera dinamica le immagini
+const imgArrey = [
+  "img/01.jpg",
+  "img/02.jpg",
+  "img/03.jpg",
+  "img/04.jpg",
+  "img/05.jpg",
+];
 
+const containerImg = document.querySelector(".img-slider");
+console.log(containerImg);
+
+for (i = 0; i < imgArrey.length; i++) {
+  const currentImg = imgArrey[i];
+
+  const sliderImg = `<div class="cont-img">
+    <img src=${currentImg} alt="" /></div>`;
+
+  containerImg.innerHTML += sliderImg;
+}
