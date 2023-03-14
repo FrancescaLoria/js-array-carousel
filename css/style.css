@@ -42,6 +42,10 @@
   display: block;
 }
 
+.arrow-below.hidden {
+  display: none;
+}
+
 .arrow-above,
 .arrow-below {
   position: absolute;

@@ -23,3 +23,29 @@ for (i = 0; i < imgArrey.length; i++) {
 
   containerImg.innerHTML += sliderImg;
 }
+
+// rendiamo visibile la prima immagine
+const divContimg = document.getElementsByClassName("cont-img");
+console.log(divContimg);
+// gli aggiungo la classe e lo rendo visibile
+let activeClassIndex = 0;
+divContimg[activeClassIndex].classList.add("active");
+
+// gestisco il "click" sulla freccia in basso
+const belowBtn = document.querySelector(".arrow-below");
+belowBtn.addEventListener("click", function () {
+  if (activeClassIndex < divContimg.length - 1) {
+    // rimuovere dalla foto attuale "active"
+    divContimg[activeClassIndex].classList.remove("active");
+
+    // incremento ( ++ )
+    activeClassIndex++;
+
+    // aggiungo active a quella successiva
+    console.log("activi", activeClassIndex);
+    if (activeClassIndex === imgArrey.length - 1) {
+      activeClassIndex = 0;
+    }
+    divContimg[activeClassIndex].classList.add("active");
+  }
+});
